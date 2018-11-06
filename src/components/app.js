@@ -37,7 +37,9 @@ export default class App extends Component {
       <div className='app'>
         <h1>Event Countdown</h1>
         <h2>React</h2>
-        <form onsubmit={this.handleSubmit} id="event-form">
+        <form onSubmit={this.handleSubmit} id="event-form">
+        <input type="date" id="date-selector" />
+        <input type="submit" className="generate-button" value="Generate Countdown" />
         </form>
         <p id="demo"></p>
       </div>
