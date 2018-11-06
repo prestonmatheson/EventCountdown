@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Row,
-  Card,
-  Col
-} from 'reactstrap';
+import CountdownForm from './countdown_form';
 
 export default class App extends Component {
   render() {
@@ -30,17 +26,14 @@ export default class App extends Component {
       // If the count down is over, write some text 
       if (distance < 0) {
           clearInterval(x);
-          document.getElementById("demo").innerHTML = "EXPIRED";
+          document.getElementById("demo").innerHTML = "Today is the day!";
       }
     }, 1000);
     return (
       <div className='app'>
         <h1>Event Countdown</h1>
         <h2>React</h2>
-        <form onSubmit={this.handleSubmit} id="event-form">
-        <input type="date" id="date-selector" />
-        <input type="submit" className="generate-button" value="Generate Countdown" />
-        </form>
+        <CountdownForm />
         <p id="demo"></p>
       </div>
     );
