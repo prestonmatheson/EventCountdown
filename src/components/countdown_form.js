@@ -10,7 +10,8 @@ class CountdownForm extends Component {
     super(props)
 
     this.state = {
-      date: ''
+      date: 'initial date',
+      inputTitle: 'date field'
     }
   }
 
@@ -19,7 +20,14 @@ class CountdownForm extends Component {
   }
 
   handleChange = function(props) {
-    return console.log(`value for input is: ${event.target.value}`);
+    return function(event) {
+      console.log(`value for date is: ${this.state.date}`);
+      this.setState({
+        date: event.target.value
+      });
+      // console.log(`value for state ${this.state.date} is: ${event.target.value}`);
+      console.log(`value for date is: ${this.state.date}`);
+    }.bind(this);
   }
 
   render(){
@@ -28,7 +36,7 @@ class CountdownForm extends Component {
       ]
   return (
     <form onSubmit={this.handleSubmit} id="event-form">
-      <input type="date" id="date-selector" onChange={this.handleChange.bind(this)}></input>
+      <input type="date" id="date-selector" onChange={this.handleChange({state: this.state.prop})}></input>
       <input type="submit" className="generate-button" value="Generate Countdown"></input>
     </form>
     );
