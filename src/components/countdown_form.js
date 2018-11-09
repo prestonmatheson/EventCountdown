@@ -4,13 +4,14 @@ import {
   Card,
   Col
 } from 'reactstrap';
+import Countdown from './countdown';
 
 class CountdownForm extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      date: 'initial date',
+      date: 'initial-date',
       inputTitle: 'date field'
     }
   }
@@ -21,7 +22,6 @@ class CountdownForm extends Component {
 
   handleChange = function(props) {
     return function(event) {
-      console.log(`value for date is: ${this.state.date}`);
       this.setState({
         date: event.target.value
       });
