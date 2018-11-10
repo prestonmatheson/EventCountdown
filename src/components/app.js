@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import {
+  Row,
+  Card,
+  Col
+} from 'reactstrap';
 import CountdownForm from './countdown_form';
-import Countdown from './countdown';
 
 export default class App extends Component {
   render() {
@@ -9,8 +13,6 @@ export default class App extends Component {
         <h1>Event Countdown</h1>
         <h2>React</h2>
         <CountdownForm />
-        <Countdown />
-        <p id="demo"></p>
       </div>
     );
   }

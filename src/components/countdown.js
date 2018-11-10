@@ -6,8 +6,10 @@ import {
 } from 'reactstrap';
 class Countdown extends Component {
   render () {
+    const data = this.props.data;
+    console.log(data.date);
         // Set the date we're counting down to
-    var countDownDate = new Date("Jan 5, 2019 15:37:25").getTime();
+    var countDownDate = new Date(data.date).getTime();
               // Update the count down every 1 second
     var x = setInterval(function() {
       // Get todays date and time
@@ -33,7 +35,7 @@ class Countdown extends Component {
       }
     }, 1000);
     return(
-      <h1>HELLO WORLD </h1>
+      <h1 id="demo" className="{data.completedForm ? 'show-content' : 'hide-content'}"></h1>
       );
   }
   

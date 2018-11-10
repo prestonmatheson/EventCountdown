@@ -6,12 +6,13 @@ import {
 } from 'reactstrap';
 import Countdown from './countdown';
 
+
 class CountdownForm extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      date: 'initial-date',
+      date: new Date().getTime(),
       inputTitle: 'date field'
     }
   }
@@ -35,10 +36,16 @@ class CountdownForm extends Component {
       {prop: 'date', state: this.state.date}
       ]
   return (
-    <form onSubmit={this.handleSubmit} id="event-form">
-      <input type="date" id="date-selector" onChange={this.handleChange({state: this.state.prop})}></input>
-      <input type="submit" className="generate-button" value="Generate Countdown"></input>
-    </form>
+    <div className="card-wrapper" >
+      <Card>
+        <form onSubmit={this.handleSubmit} id="event-form">
+          <input type="date" id="date-selector" onChange={this.handleChange({state: this.state.prop})}></input>
+          <input type="submit" className="generate-button" value="Generate Countdown"></input>
+          <Countdown data={this.state} />
+        </form>
+        <Countdown data={this.state} />
+      </Card>
+    </div>
     );
   }
 }
