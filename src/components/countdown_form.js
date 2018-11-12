@@ -13,13 +13,16 @@ class CountdownForm extends Component {
 
     this.state = {
       date: new Date().getTime(),
+      completedForm: false,
       inputTitle: 'date field'
     }
   }
 
-  handleSubmit = function(props) {
-    console.log(`value for date is: ${this.state[props.date]}`);
-  }
+  handleSubmit = function(event) {
+    // console.log(`value for date is: ${this.state.date}`);
+    this.setState({completedForm: true});
+    event.preventDefault();
+  }.bind(this);
 
   handleChange = function(props) {
     return function(event) {

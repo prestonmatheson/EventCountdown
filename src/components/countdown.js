@@ -35,7 +35,7 @@ class Countdown extends Component {
       }
     }, 1000);
     return(
-      <h1 id="demo" className="{data.completedForm ? 'show-content' : 'hide-content'}"></h1>
+      <h1 id="demo" className={data.completedForm ? 'show-content' : 'hide-content'}></h1>
       );
   }
   
