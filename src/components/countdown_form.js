@@ -42,8 +42,12 @@ class CountdownForm extends Component {
     <div className="card-wrapper" >
       <Card>
         <form onSubmit={this.handleSubmit} id="event-form">
-          <input type="date" id="date-selector" onChange={this.handleChange({state: this.state.prop})}></input>
-          <input type="submit" className="generate-button" value="Generate Countdown"></input>
+          <Row>
+            <input type="date" id="date-selector" onChange={this.handleChange({state: this.state.prop})}></input>
+          </Row>
+          <Row>
+            <input type="submit" className="generate-button" value="Generate Countdown"></input>
+          </Row>
           <Countdown data={this.state} />
         </form>
         <Countdown data={this.state} />
