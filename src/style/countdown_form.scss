@@ -23,13 +23,14 @@
   margin-top: 42px;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
 }
-
+.date-col {
+  width: 100%;
+  text-align: center;
+}
 #date-selector {
   height: 50px;
   width: 300px;
-  /* border-radius: 4px; */
   border: none;
   border-bottom: 1px solid black;
   font-size: 16px;
-  text-align: center;
 }
