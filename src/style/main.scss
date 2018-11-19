@@ -29,3 +29,7 @@ body {
     display: grid;
     justify-items: center;
 }
+input:focus,
+button:focus {
+    outline: none;
+}

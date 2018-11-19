@@ -58,7 +58,6 @@ class CountdownForm extends Component {
           </Row>
           <Countdown data={this.state} />
         </form>
-        <Countdown data={this.state} />
       </Card>
     </div>
     );

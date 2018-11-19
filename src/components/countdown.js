@@ -6,7 +6,7 @@ import {
 } from 'reactstrap';
 class Countdown extends Component {
   render () {
-    const data = this.props.data;
+    var data = this.props.data;
     console.log(data.date);
         // Set the date we're counting down to
     var countDownDate = new Date(data.date).getTime();
@@ -37,9 +37,11 @@ class Countdown extends Component {
     return(
       <Row className={data.completedForm ? 'show-content' : 'hide-content'}>
         <div className="countdown-wrapper">
-          <Col md="12">
-            <h1 id="demo"></h1>
-          </Col>
+          <div className="layer">
+            <Col md="12">
+              <h1 id="demo"></h1>
+            </Col>
+          </div>
         </div>
       </Row>
       );
